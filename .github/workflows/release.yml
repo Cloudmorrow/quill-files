@@ -26,6 +26,8 @@ jobs:
         run: |
           version=$(python3 -c "import tomllib; print(tomllib.load(open('quill.toml','rb'))['quill']['version'])")
           test "v$version" = "$GITHUB_REF_NAME" || { echo "quill.toml says $version, the tag is $GITHUB_REF_NAME"; exit 1; }
-      - run: gh release create "$GITHUB_REF_NAME" --generate-notes
+      # A release made on github.com makes its tag, and the tag starts this:
+      # then the release is there already, and checking it was the work.
+      - run: gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || gh release create "$GITHUB_REF_NAME" --generate-notes
         env:
           GH_TOKEN: ${{ github.token }}
