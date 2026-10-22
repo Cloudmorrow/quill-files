@@ -14,6 +14,9 @@ file manager shows a folder.
   big, or as tiles that show what a picture is of. Put files in from the
   phone, the camera, a drag or a paste; make folders; rename, move and
   delete; open a picture; save or share anything.
+- **Trash**: what you delete goes to a Trash folder at the top of the share,
+  with a Restore button that puts it back where it was. Thirty days on, the
+  server removes it for good; deleting it in the Trash does so at once.
 - In the Cloudmorrow desktop app, each share can be mounted on the computer
   it runs on, opened in its file manager and unmounted, from the same list.
 
@@ -26,7 +29,7 @@ desktop app just as before. This Quill carries only the screen.
 | | |
 | --- | --- |
 | Datamodels | uses the foundational `share` and `file` (domain *Files*), served by the core from the shares and each person's drive |
-| Screens | one grid: the shares, then folders and tiles — on the phone, the web app, the terminal, `cm files`, and to your assistant |
+| Screens | one grid: the shares, then folders and tiles — on the phone, the web app, the terminal, `cm files`, and to your assistant; a Trash in every share, with Restore, swept after thirty days |
 | Jobs | none |
 | Datasets | none: My Files is there because your account is |
 | Services, webhooks, APIs | none |
@@ -40,6 +43,8 @@ cm files list                      # My Files, your shares and the ones shared w
 cm files list my-files Photos      # a folder
 cm files get my-files Photos/cat.jpg [out]
 cm files put my-files Photos ./dog.jpg
+cm files delete my-files Photos/old.jpg    # to the Trash
+cm files restore my-files Trash/old.jpg    # back where it was
 ```
 
 ## Working on it
