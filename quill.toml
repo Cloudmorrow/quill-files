@@ -1,7 +1,7 @@
 [quill]
 id = "files"
 name = "Files"
-version = "1.1.0"
+version = "1.2.0"
 summary = "Your own drive on the server, your fileshares, and what is in them."
 category = "personal"
 icon = "files"
@@ -14,6 +14,11 @@ features = [
   "Sort by name, date, size or type; folders first",
   "Upload from the phone, the camera, a drag or a paste; make folders; rename, move and delete",
   "A Trash in every share: what you delete waits there thirty days, with a Restore button, before it goes for good",
+  "The Trash is the bin beside the plus, not a folder among the folders; open it and Empty clears it in one go",
+  "A menu on every file and folder — right-click, or hold a finger on it — with Open, Edit with, Rename, Duplicate, Copy to, Move to and Delete",
+  "Select several, or Shift and Ctrl with a click, for one move, copy or delete; drag a file or folder onto a folder to move it",
+  "A search through a folder and everything under it, names and lines, from the magnifier beside the title",
+  "New share and Local backups under the “…” at the top: folders on your computers, copied into My Files by their agents",
   "Open a picture, save or share any file",
   "In the desktop app: mount a share on this computer, open its folder, unmount it",
 ]
@@ -41,3 +46,4 @@ modified = "modified"
 mime = "mime"
 deleted = "deleted"             # in the Trash: when it went there, and Restore instead of Delete
 deleted_from = "deleted_from"   # …and where it was, which Restore puts it back to
+trash = "Trash"                 # the folder the server keeps them in: a bin beside the plus, not among the folders
